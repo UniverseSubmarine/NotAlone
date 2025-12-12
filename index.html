@@ -40,7 +40,7 @@
 
         .animate-gradient {
             background-size: 200% 200%;
-            animation: gradientFlow 6s ease infinite;
+            animation: gradientFlow 3s ease infinite;
         }
 
         @keyframes rainbowFlow {
@@ -61,18 +61,18 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(90deg,
-                    rgba(255, 0, 0, 0.20),
-                    rgba(255, 154, 0, 0.20),
-                    rgba(208, 222, 33, 0.20),
-                    rgba(79, 220, 74, 0.20),
-                    rgba(63, 218, 216, 0.20),
-                    rgba(47, 201, 226, 0.20),
-                    rgba(28, 127, 238, 0.20),
-                    rgba(95, 21, 242, 0.20),
-                    rgba(186, 12, 248, 0.20),
-                    rgba(251, 7, 217, 0.20));
+                    rgba(255, 0, 0, 0.10),
+                    rgba(255, 154, 0, 0.10),
+                    rgba(208, 222, 33, 0.10),
+                    rgba(79, 220, 74, 0.10),
+                    rgba(63, 218, 216, 0.10),
+                    rgba(47, 201, 226, 0.10),
+                    rgba(28, 127, 238, 0.10),
+                    rgba(95, 21, 242, 0.10),
+                    rgba(186, 12, 248, 0.10),
+                    rgba(251, 7, 217, 0.10));
             background-size: 400% 400%;
-            animation: rainbowFlow 15s ease infinite;
+            animation: rainbowFlow 5s ease infinite;
             mix-blend-mode: screen;
             pointer-events: none;
         }
@@ -112,7 +112,7 @@
 <body>
     <div class="w-screen h-screen flex items-center justify-center bg-cover bg-center relative"
         style="background-image: url('https://www.issuemaker.kr/news/photo/old/14319285804186.png');">
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
         <div class="rainbow-overlay"></div>
         <div class="relative z-10 text-center">
 
@@ -133,5 +133,6 @@
     </div>
 
 </body>
+
 
 </html>
