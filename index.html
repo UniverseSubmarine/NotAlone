@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=icon href="https://www.investkorea.org/namofile.do?dn=/images/000017/Industry_focus_img1.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- 폰트 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Modak&display=swap');
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            font-family: "Pretendard", sans-serif;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradientFlow 6s ease infinite;
+        }
+
+        @keyframes rainbowFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .rainbow-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    rgba(255, 0, 0, 0.20),
+                    rgba(255, 154, 0, 0.20),
+                    rgba(208, 222, 33, 0.20),
+                    rgba(79, 220, 74, 0.20),
+                    rgba(63, 218, 216, 0.20),
+                    rgba(47, 201, 226, 0.20),
+                    rgba(28, 127, 238, 0.20),
+                    rgba(95, 21, 242, 0.20),
+                    rgba(186, 12, 248, 0.20),
+                    rgba(251, 7, 217, 0.20));
+            background-size: 400% 400%;
+            animation: rainbowFlow 15s ease infinite;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        @keyframes glossMove {
+            0% {
+                transform: translateX(-100%) skewX(-25deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.25;
+            }
+
+            100% {
+                transform: translateX(200%) skewX(-25deg);
+                opacity: 0;
+            }
+        }
+
+        h1 {
+            font-family: "Modak", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 16rem;
+        }
+
+        p {
+            font-family: "Bagel Fat One", system-ui;
+            font-style: normal;
+        }
+    </style>
+
+    <title>Korean food</title>
+</head>
+
+<body>
+    <div class="w-screen h-screen flex items-center justify-center bg-cover bg-center relative"
+        style="background-image: url('https://www.issuemaker.kr/news/photo/old/14319285804186.png');">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div class="rainbow-overlay"></div>
+        <div class="relative z-10 text-center">
+
+            <h1 class="font-extrabold tracking-wide drop-shadow-xl 
+                       bg-gradient-to-r from-green-300 via-emerald-400 to-teal-500 
+                       bg-clip-text text-transparent animate-gradient">
+                K-FOOD
+            </h1>
+
+
+            <p class="text-6xl md:text-6xl text-gray-200 leading-relaxed max-w-xl mx-auto tracking-wide drop-shadow-xl 
+                       bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 
+                       bg-clip-text text-transparent animate-gradient">
+                전 세계를 중독시킨 맛.
+            </p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
