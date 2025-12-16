@@ -104,9 +104,73 @@
             font-family: "Bagel Fat One", system-ui;
             font-style: normal;
         }
+
+        .floating-photo {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 9999px;
+            border: 4px solid white;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            pointer-events: none;
+            z-index: 5;
+        }
     </style>
 
     <title>Korean food</title>
+
+    <script>
+    const images = [
+        "https://m.health.chosun.com/site/data/img_dir/2021/09/01/2021090100998_0.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Gimbap_%28pixabay%29.jpg/1200px-Gimbap_%28pixabay%29.jpg",
+        "https://img.etoday.co.kr/pto_db/2023/12/600/20231227161129_1968141_1200_1204.jpg",
+        "https://cdnweb01.wikitree.co.kr/webdata/editor/202502/22/img_20250222164350_1501fe8c.webp",
+        "https://img-cf.kurly.com/hdims/resize/%3E720x/quality/90/src/shop/data/goodsview/20240620/gv00000932401_1.jpg",
+        "https://img.daily.co.kr/@files/www.daily.co.kr/content/food/2024/20240730/a6b91d6073fa51a56d2519e8c4eb3235.jpg"
+    ];
+
+    const photos = [];
+
+    images.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.className = "floating-photo";
+
+        const size = 160;
+        const x = Math.random() * (window.innerWidth - size);
+        const y = Math.random() * (window.innerHeight - size);
+        const vx = (Math.random() * 2 + 1) * (Math.random() > 0.5 ? 1 : -1);
+        const vy = (Math.random() * 2 + 1) * (Math.random() > 0.5 ? 1 : -1);
+
+        img.style.left = `${x}px`;
+        img.style.top = `${y}px`;
+
+        document.body.appendChild(img);
+
+        photos.push({ el: img, x, y, vx, vy, size });
+    });
+
+    function animate() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+
+        photos.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.x <= 0 || p.x + p.size >= w) p.vx *= -1;
+            if (p.y <= 0 || p.y + p.size >= h) p.vy *= -1;
+
+            p.el.style.left = `${p.x}px`;
+            p.el.style.top = `${p.y}px`;
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+    </script>
 </head>
 
 <body>
@@ -136,4 +200,5 @@
 
 
 </html>
+
 
